@@ -1,0 +1,6 @@
+services:
+  mosaic_s1:
+    build:
+      context: .
+      dockerfile: Dockerfile.job
+    command: [".venv/bin/python", "-m", "mosaic_s1"]
