@@ -4,3 +4,12 @@ services:
       context: job
       dockerfile: job/Dockerfile.job
     command: [".venv/bin/python", "-m", "mosaic_s1"]
+  webmap:
+    build: app/webmap
+    ports:
+      - 3000:3000
+    develop:
+      watch:
+        - path: app/webmap
+          action: rebuild
+          target: /usr/src/app

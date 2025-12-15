@@ -1,0 +1,50 @@
+{
+  "version": "5",
+  "specifiers": {
+    "npm:geotiff@^2.1.4-beta.1": "2.1.4-beta.1"
+  },
+  "npm": {
+    "@petamoriken/float16@3.9.3": {
+      "integrity": "sha512-8awtpHXCx/bNpFt4mt2xdkgtgVvKqty8VbjHI/WWWQuEw+KLzFot3f4+LkQY9YmOtq7A5GdOnqoIC8Pdygjk2g=="
+    },
+    "geotiff@2.1.4-beta.1": {
+      "integrity": "sha512-3cW7V2XjnBWDJ8Gj/vCidvl3xiaN5c3az1Tfym9MBFq0LI3pi37YYWt9YxOjXF7njO135iKRGTJcbbsTiPdk2Q==",
+      "dependencies": [
+        "@petamoriken/float16",
+        "lerc",
+        "pako",
+        "parse-headers",
+        "quick-lru",
+        "web-worker",
+        "xml-utils",
+        "zstddec"
+      ]
+    },
+    "lerc@3.0.0": {
+      "integrity": "sha512-Rm4J/WaHhRa93nCN2mwWDZFoRVF18G1f47C+kvQWyHGEZxFpTUi73p7lMVSAndyxGt6lJ2/CFbOcf9ra5p8aww=="
+    },
+    "pako@2.1.0": {
+      "integrity": "sha512-w+eufiZ1WuJYgPXbV/PO3NCMEc3xqylkKHzp8bxp1uW4qaSNQUkwmLLEc3kKsfz8lpV1F8Ht3U1Cm+9Srog2ug=="
+    },
+    "parse-headers@2.0.6": {
+      "integrity": "sha512-Tz11t3uKztEW5FEVZnj1ox8GKblWn+PvHY9TmJV5Mll2uHEwRdR/5Li1OlXoECjLYkApdhWy44ocONwXLiKO5A=="
+    },
+    "quick-lru@6.1.2": {
+      "integrity": "sha512-AAFUA5O1d83pIHEhJwWCq/RQcRukCkn/NSm2QsTEMle5f2hP0ChI2+3Xb051PZCkLryI/Ir1MVKviT2FIloaTQ=="
+    },
+    "web-worker@1.5.0": {
+      "integrity": "sha512-RiMReJrTAiA+mBjGONMnjVDP2u3p9R1vkcGz6gDIrOMT3oGuYwX2WRMYI9ipkphSuE5XKEhydbhNEJh4NY9mlw=="
+    },
+    "xml-utils@1.10.2": {
+      "integrity": "sha512-RqM+2o1RYs6T8+3DzDSoTRAUfrvaejbVHcp3+thnAtDKo8LskR+HomLajEy5UjTz24rpka7AxVBRR3g2wTUkJA=="
+    },
+    "zstddec@0.2.0-alpha.3": {
+      "integrity": "sha512-uHyE3TN8jRFOaMVwdhERfrcaabyoUUawIRDKXE6x0nCU7mzyIZO0LndJ3AtVUiKLF0lC+8F5bMSySWEF586PSA=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "npm:geotiff@^2.1.4-beta.1"
+    ]
+  }
+}

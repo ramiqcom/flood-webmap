@@ -1,4 +1,9 @@
-export async function execute_process(cmd: string, args: any[], signal?, output: boolean = false) {
+export async function execute_process(
+  cmd: string,
+  args: any[],
+  signal?: AbortSignal,
+  output: boolean = false
+) {
   const command = new Deno.Command(cmd, {
     args,
     signal,

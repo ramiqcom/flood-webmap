@@ -6,6 +6,7 @@ export const handler: Handlers = {
     try {
       const { searchParams } = new URL(req.url);
       const type = searchParams.get('type');
+
       // FIlter basemap
       let style = {};
       const basemap = basemaps.filter((dict) => dict.value == type)[0];

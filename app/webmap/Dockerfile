@@ -2,7 +2,7 @@ FROM gcr.io/ramadhan-s4g/eo-base
 
 WORKDIR /usr/src/app
 
-COPY app/webmap .
+COPY . .
 
 RUN deno task build
 

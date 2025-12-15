@@ -61,15 +61,15 @@ export default function MapCanvas() {
         map.addLayer({ source: layer.value, id: layer.value, type: 'raster' });
       }
 
-      map.getStyle().layers.map((layer_dict) => {
-        if (layer_dict.id != basemapId) {
-          map.setLayoutProperty(
-            layer_dict.id,
-            'visibility',
-            layer_dict.id == layer.value ? 'visible' : 'none'
-          );
-        }
-      });
+      // map.getStyle().layers.map((layer_dict) => {
+      //   if (layer_dict.id != basemapId) {
+      //     map.setLayoutProperty(
+      //       layer_dict.id,
+      //       'visibility',
+      //       layer_dict.id == layer.value ? 'visible' : 'none'
+      //     );
+      //   }
+      // });
     }
   }, [map, mapLoaded, layer]);
 
