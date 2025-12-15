@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://unpkg.com/maplibre-gl@^5.5.0/dist/maplibre-gl.css');
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  font-size: small;
+  background-color: black;
+  color: whitesmoke;
+}
+
+input {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  width: 100%;
+  min-height: 3vh;
+  color: whitesmoke;
+  font-size: small;
+}
+
+input[type='text'] {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: whitesmoke;
+}
+
+input[type='number'] {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: whitesmoke;
+  border: none;
+  text-align: center;
+}
+
+input[type='number']:disabled {
+  background-color: transparent;
+  border: thin solid #134f5c;
+}
+
+datalist {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: whitesmoke;
+}
+
+option {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: whitesmoke;
+}
+
+input[type='file']::file-selector-button {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  min-height: 3vh;
+  font-size: small;
+  background-color: #134f5c;
+  border: none;
+  color: whitesmoke;
+  width: 40%;
+  font-size: small;
+}
+
+input[type='file']::file-selector-button:hover {
+  background-color: teal;
+}
+
+input[type='file']::file-selector-button:disabled {
+  background-color: transparent;
+  border: thin solid #134f5c;
+  color: whitesmoke;
+}
+
+input[type='date'] {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #134f5c;
+  color: whitesmoke;
+  border: none;
+  font-size: small;
+  min-height: 3vh;
+}
+
+input[type='date']:enabled:hover {
+  background-color: teal;
+}
+
+input[type='date']:disabled {
+  background-color: transparent;
+  border: thin solid #134f5c;
+  color: gainsboro;
+}
+
+input[type='checkbox'] {
+  display: flex;
+}
+
+select {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  width: 100%;
+  display: flex;
+  min-height: 3vh;
+  background-color: #134f5c;
+  color: whitesmoke;
+  border: none;
+  font-size: small;
+  text-align: center;
+}
+
+select:enabled:hover {
+  background-color: teal;
+}
+
+select:disabled {
+  background-color: transparent;
+  border: thin solid #134f5c;
+  color: gainsboro;
+}
+
+button {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  min-height: 3vh;
+  font-size: small;
+  color: whitesmoke;
+  border: none;
+  background-color: #134f5c;
+}
+
+button:enabled:hover {
+  background-color: teal;
+}
+
+button:disabled {
+  background-color: transparent;
+  border: thin solid #134f5c;
+  color: gainsboro;
+}
+
+.button-select {
+  width: 100%;
+  padding: 1vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  min-height: 3vh;
+  background-color: #134f5c;
+}
+
+.button-select:hover {
+  background-color: teal;
+}
+
+.button-select:disabled {
+  border: none;
+  background-color: transparent;
+  color: whitesmoke;
+}
+
+.flexible {
+  display: flex;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.status {
+  text-align: center;
+  font-size: small;
+}
+
+.wide {
+  justify-content: space-between;
+}
+
+.big-gap {
+  gap: 2vh;
+}
+
+.gap {
+  gap: 2vh;
+}
+
+.small-gap {
+  gap: 1vh;
+}
+
+.center1 {
+  align-items: center;
+}
+
+.center2 {
+  justify-content: center;
+}
+
+.center3 {
+  align-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.float-panel {
+  background-image: linear-gradient(45deg, #134f5c, #68a64f);
+  max-width: 40vh;
+  max-height: 90vh;
+}
+
+.basemap {
+  top: 1vh;
+  margin-top: 1vh;
+  right: 1vh;
+  margin-right: 3vh;
+}
+
+.float {
+  z-index: 99999;
+  position: absolute;
+}
+
+.analysis {
+  bottom: 1vh;
+  margin-bottom: 1vh;
+  right: 1vh;
+  margin-right: 3vh;
+}
+
+.title {
+  font-size: large;
+  font-weight: 700;
+  text-align: center;
+}
+
+.section {
+  padding: 2vh;
+  width: 100%;
+  border: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.navbar-button {
+  width: 100%;
+  height: 8vh;
+}
+
+#loading {
+  width: 100%;
+  height: 100%;
+  background-color: #134f5c;
+  color: whitesmoke;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+#map canvas {
+  cursor: crosshair;
+}
+
+#panel {
+  padding: 2vh;
+  width: 25%;
+  overflow-y: auto;
+}
+
+#modal {
+  width: 30vh;
+  font-size: large;
+  background-color: #134f5c;
+  text-align: center;
+  border: thin solid #134f5c;
+  color: whitesmoke;
+}
+
+#legend {
+  margin-top: 1vh;
+  overflow-y: auto;
+  max-height: 60vh;
+  font-size: smaller;
+}
+
+#nav {
+  position: absolute;
+  z-index: 9999999;
+  height: 100%;
+  background-image: linear-gradient(45deg, #134f5c, #68a64f);
+}
+
+#navbar {
+  width: 6vh;
+}
+
+#nav-section {
+  width: 35vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
+}
+
+#status {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+#hide-button {
+  background-color: firebrick;
+  color: whitesmoke;
+  width: 2vh;
+  height: 1vh;
+}
+
+#hide-button:hover {
+  background-color: red;
+}

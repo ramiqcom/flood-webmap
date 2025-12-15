@@ -1,0 +1,11 @@
+FROM gcr.io/ramadhan-s4g/eo-base
+
+WORKDIR /usr/src/app
+
+COPY app/webmap .
+
+RUN deno task build
+
+EXPOSE 3000
+
+CMD [ "deno", "task", "preview" ]

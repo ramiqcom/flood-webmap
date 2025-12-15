@@ -1,0 +1,17 @@
+[
+  {
+    "label": "OSM",
+    "value": "osm",
+    "url": "https://tiles.stadiamaps.com/styles/osm_bright/rendered.json"
+  },
+  {
+    "label": "Dark",
+    "value": "dark",
+    "url": "https://tiles.stadiamaps.com/styles/alidade_smooth_dark/rendered.json"
+  },
+  {
+    "label": "Satellite",
+    "value": "satellite",
+    "tiles": "https://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}"
+  }
+]

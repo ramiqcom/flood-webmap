@@ -1,0 +1,22 @@
+[
+  {
+    "value": "s1_2025_11_21",
+    "label": "Sentinel-1 2025-11-21",
+    "path": "/vsicurl/https://storage.googleapis.com/gee-ramiqcom-s4g-bucket/sumatera_flood/s1_mosaic/s1_2025-11-21.tif"
+  },
+  {
+    "value": "s1_2025_11_22",
+    "label": "Sentinel-1 2025-11-22",
+    "path": "/vsicurl/https://storage.googleapis.com/gee-ramiqcom-s4g-bucket/sumatera_flood/s1_mosaic/s1_2025-11-22.tif"
+  },
+  {
+    "value": "s1_2025_11_28",
+    "label": "Sentinel-1 2025-11-28",
+    "path": "/vsicurl/https://storage.googleapis.com/gee-ramiqcom-s4g-bucket/sumatera_flood/s1_mosaic/s1_2025-11-28.tif"
+  },
+  {
+    "value": "s1_2025_11_29",
+    "label": "Sentinel-1 2025-11-29",
+    "path": "/vsicurl/https://storage.googleapis.com/gee-ramiqcom-s4g-bucket/sumatera_flood/s1_mosaic/s1_2025-11-29.tif"
+  }
+]

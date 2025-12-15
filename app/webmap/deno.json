@@ -1,0 +1,43 @@
+{
+  "lock": false,
+  "tasks": {
+    "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
+    "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
+    "manifest": "deno task cli manifest $(pwd)",
+    "start": "deno run --allow-all --watch=static/,routes/ dev.ts",
+    "build": "deno run --allow-all dev.ts build",
+    "preview": "deno run --allow-all main.ts",
+    "update": "deno run --allow-all -r https://fresh.deno.dev/update ."
+  },
+  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
+  "exclude": ["**/_fresh/*"],
+  "imports": {
+    "$fresh/": "https://deno.land/x/fresh@1.7.3/",
+    "@mapbox/tilebelt": "npm:@mapbox/tilebelt@^2.0.2",
+    "@tmcw/togeojson": "npm:@tmcw/togeojson@^7.1.1",
+    "@turf/turf": "npm:@turf/turf@^7.2.0",
+    "@types/mapbox__tilebelt": "npm:@types/mapbox__tilebelt@^1.0.4",
+    "archiver": "npm:archiver@^7.0.1",
+    "chart.js": "npm:chart.js@^4.4.9",
+    "color": "npm:color@^5.0.0",
+    "eslint-config-prettier": "npm:eslint-config-prettier@^10.1.5",
+    "flatgeobuf": "npm:flatgeobuf@^4.0.1",
+    "maplibre-gl": "npm:maplibre-gl@^5.5.0",
+    "pmtiles": "npm:pmtiles@^4.3.0",
+    "preact": "https://esm.sh/preact@10.22.0",
+    "preact/": "https://esm.sh/preact@10.22.0/",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
+    "$std/": "https://deno.land/std@0.216.0/",
+    "prettier": "npm:prettier@^3.5.3",
+    "shpjs": "npm:shpjs@^6.1.0",
+    "wellknown": "npm:wellknown@^0.5.0",
+    "@/": "./"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "strict": false,
+    "noImplicitAny": false
+  }
+}
