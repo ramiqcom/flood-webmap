@@ -2,7 +2,11 @@ import { Store } from '@/modules/store.ts';
 import maplibregl from 'maplibre-gl';
 import { useContext, useEffect, useState } from 'preact/hooks';
 
-export default function MapCanvas() {
+export default function MapCanvas({
+  defaultBounds,
+}: {
+  defaultBounds: [number, number, number, number];
+}) {
   // All the stored states
   const { map, setMap, setStatus, basemap, basemapId, layer } = useContext(Store);
 
@@ -15,10 +19,9 @@ export default function MapCanvas() {
     try {
       const map = new maplibregl.Map({
         container: divId,
-        center: [117, 0],
+        bounds: defaultBounds,
         maxZoom: 20,
         minZoom: 2,
-        zoom: 4,
         style: {
           projection: {
             type: 'globe',
@@ -30,6 +33,11 @@ export default function MapCanvas() {
               url: `/basemap?type=${basemap.value}`,
               tileSize: 256,
             },
+            [layer.value]: {
+              type: 'raster',
+              url: `/cog/tilejson?layer=${layer.value}`,
+              tileSize: 256,
+            },
           },
           layers: [
             {
@@ -37,6 +45,7 @@ export default function MapCanvas() {
               source: basemapId,
               type: 'raster',
             },
+            { source: layer.value, id: layer.value, type: 'raster' },
           ],
         },
       });
@@ -61,15 +70,21 @@ export default function MapCanvas() {
         map.addLayer({ source: layer.value, id: layer.value, type: 'raster' });
       }
 
-      // map.getStyle().layers.map((layer_dict) => {
-      //   if (layer_dict.id != basemapId) {
-      //     map.setLayoutProperty(
-      //       layer_dict.id,
-      //       'visibility',
-      //       layer_dict.id == layer.value ? 'visible' : 'none'
-      //     );
-      //   }
-      // });
+      // hide unused layer
+      map.getStyle().layers.map((layer_dict) => {
+        if (layer_dict.id != basemapId) {
+          map.setLayoutProperty(
+            layer_dict.id,
+            'visibility',
+            layer_dict.id == layer.value ? 'visible' : 'none'
+          );
+        }
+      });
+
+      // zoom to layer
+      fetch(`/cog/tilejson?layer=${layer.value}`)
+        .then((res) => res.json())
+        .then((style) => map.fitBounds(style.bounds));
     }
   }, [map, mapLoaded, layer]);
 

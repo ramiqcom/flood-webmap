@@ -1,15 +1,23 @@
-import basemaps from '@/data/basemap.json' with { "type": "json" };
-import layers from "@/data/layers.json" with { "type": "json" };
 import MapCanvas from '@/islands/map.tsx';
 import { Store } from '@/modules/store.ts';
-import { Option, Status } from '@/modules/type.ts';
+import { Option, Options, Status } from '@/modules/type.ts';
 import { Map } from 'maplibre-gl';
 import { useState } from 'preact/hooks';
 
-export default function Main() {
+export default function Main({
+  layers,
+  basemaps,
+  defaultLayer,
+  defaultBounds,
+}: {
+  layers: Options;
+  basemaps: Options;
+  defaultLayer: Option;
+  defaultBounds: [number, number, number, number];
+}) {
   const [map, setMap] = useState<Map>();
   const [basemap, setBasemap] = useState<Option>(basemaps[0]);
-  const [layer, setLayer] = useState<Option>(layers[0]);
+  const [layer, setLayer] = useState<Option>(defaultLayer);
   const [status, setStatus] = useState<Status>({
     message: 'Loading map...',
     type: 'process',
@@ -26,13 +34,14 @@ export default function Main() {
     status,
     setStatus,
     layers,
-    layer, setLayer
+    layer,
+    setLayer,
   };
 
   return (
     <>
       <Store.Provider value={states}>
-        <MapCanvas />
+        <MapCanvas defaultBounds={defaultBounds} />
       </Store.Provider>
     </>
   );
