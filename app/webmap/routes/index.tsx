@@ -8,7 +8,7 @@ export default async function Home() {
   const bounds = await get_bbox(layer.value);
   return (
     <>
-      <Main basemaps={basemaps} layers={layers} defaultLayer={layer} defaultBounds={bounds} />
+      <Main basemaps={basemaps} layers={layers} defaultLayer={layer} defaultBounds={bounds} defaultBasemap={basemaps[1]} />
     </>
   );
 }

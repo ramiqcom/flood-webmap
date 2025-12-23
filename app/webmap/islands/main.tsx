@@ -3,20 +3,23 @@ import { Store } from '@/modules/store.ts';
 import { Option, Options, Status } from '@/modules/type.ts';
 import { Map } from 'maplibre-gl';
 import { useState } from 'preact/hooks';
+import Float from './float_panel.tsx';
 
 export default function Main({
   layers,
   basemaps,
+  defaultBasemap,
   defaultLayer,
   defaultBounds,
 }: {
   layers: Options;
   basemaps: Options;
+  defaultBasemap: Option;
   defaultLayer: Option;
   defaultBounds: [number, number, number, number];
 }) {
   const [map, setMap] = useState<Map>();
-  const [basemap, setBasemap] = useState<Option>(basemaps[0]);
+  const [basemap, setBasemap] = useState<Option>(defaultBasemap);
   const [layer, setLayer] = useState<Option>(defaultLayer);
   const [status, setStatus] = useState<Status>({
     message: 'Loading map...',
@@ -41,6 +44,7 @@ export default function Main({
   return (
     <>
       <Store.Provider value={states}>
+        <Float />
         <MapCanvas defaultBounds={defaultBounds} />
       </Store.Provider>
     </>
