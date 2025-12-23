@@ -45,6 +45,7 @@ export async function generate_image(layer: string, bbox: [number, number, numbe
     path,
     "!",
     "reproject",
+    '--resampling=lanczos',
     `--bbox=${bbox.join(",")}`,
     "--bbox-crs=EPSG:4326",
     `--size=${size},${size}`,
