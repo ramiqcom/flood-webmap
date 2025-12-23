@@ -4,6 +4,7 @@ import { Option, Options, Status } from '@/modules/type.ts';
 import { Map } from 'maplibre-gl';
 import { useState } from 'preact/hooks';
 import Float from './float_panel.tsx';
+import Panel from './panels.tsx';
 
 export default function Main({
   layers,
@@ -45,6 +46,7 @@ export default function Main({
     <>
       <Store.Provider value={states}>
         <Float />
+        <Panel />
         <MapCanvas defaultBounds={defaultBounds} />
       </Store.Provider>
     </>

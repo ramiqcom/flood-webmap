@@ -12,6 +12,24 @@
     "type": "sentinel-1"
   },
   {
+    "value": "s1_2025_11_24",
+    "label": "Sentinel-1 2025-11-24",
+    "path": "/vsicurl/https://storage.googleapis.com/gee-ramiqcom-s4g-bucket/sumatera_flood/s1_mosaic/s1_2025-11-24.tif",
+    "type": "sentinel-1"
+  },
+  {
+    "value": "s1_2025_11_25",
+    "label": "Sentinel-1 2025-11-25",
+    "path": "/vsicurl/https://storage.googleapis.com/gee-ramiqcom-s4g-bucket/sumatera_flood/s1_mosaic/s1_2025-11-25.tif",
+    "type": "sentinel-1"
+  },
+  {
+    "value": "s1_2025_11_27",
+    "label": "Sentinel-1 2025-11-27",
+    "path": "/vsicurl/https://storage.googleapis.com/gee-ramiqcom-s4g-bucket/sumatera_flood/s1_mosaic/s1_2025-11-27.tif",
+    "type": "sentinel-1"
+  },
+  {
     "value": "s1_2025_11_28",
     "label": "Sentinel-1 2025-11-28",
     "path": "/vsicurl/https://storage.googleapis.com/gee-ramiqcom-s4g-bucket/sumatera_flood/s1_mosaic/s1_2025-11-28.tif",
@@ -21,6 +39,12 @@
     "value": "s1_2025_11_29",
     "label": "Sentinel-1 2025-11-29",
     "path": "/vsicurl/https://storage.googleapis.com/gee-ramiqcom-s4g-bucket/sumatera_flood/s1_mosaic/s1_2025-11-29.tif",
+    "type": "sentinel-1"
+  },
+  {
+    "value": "s1_2025_11_30",
+    "label": "Sentinel-1 2025-11-30",
+    "path": "/vsicurl/https://storage.googleapis.com/gee-ramiqcom-s4g-bucket/sumatera_flood/s1_mosaic/s1_2025-11-30.tif",
     "type": "sentinel-1"
   }
 ]

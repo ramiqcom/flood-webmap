@@ -61,6 +61,8 @@ export default function MapCanvas({
 
   useEffect(() => {
     if (map && mapLoaded && layer) {
+      setStatus({ message: 'Processing layer', type: 'process' });
+
       if (!map.getSource(layer.value)) {
         map.addSource(layer.value, {
           type: 'raster',
@@ -81,10 +83,7 @@ export default function MapCanvas({
         }
       });
 
-      // zoom to layer
-      fetch(`/cog/tilejson?layer=${layer.value}`)
-        .then((res) => res.json())
-        .then((style) => map.fitBounds(style.bounds));
+      setStatus({ message: 'Layer loaded', type: 'success' });
     }
   }, [map, mapLoaded, layer]);
 
