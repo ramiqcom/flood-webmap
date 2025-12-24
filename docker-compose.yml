@@ -5,6 +5,9 @@ services:
       dockerfile: job/Dockerfile.job
     command: [".venv/bin/python", "-m", "mosaic_s1"]
   webmap:
+    cpu_count: 2
+    environment:
+      - TILE_SERVER=http://tile_server:8000
     build: app/webmap
     ports:
       - 3000:3000
@@ -13,3 +16,19 @@ services:
         - path: app/webmap
           action: rebuild
           target: /usr/src/app
+    networks:
+      - mynetwork
+  tile_server:
+    cpu_count: 4
+    build: app/tile_server
+    ports:
+      - 8000:8000
+    develop:
+      watch:
+        - path: app/tile_server
+          action: rebuild
+          target: /usr/src/app
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
