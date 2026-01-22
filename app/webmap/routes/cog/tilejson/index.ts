@@ -1,6 +1,6 @@
 import { Handlers } from '$fresh/server.ts';
-import layers from '@/data/layers.json' with { type: "json" };
-import { execute_process } from '@/modules/server_util.ts';
+import layers from '@/data/layers.json' with { type: 'json' };
+import { fromUrl } from 'geotiff';
 
 export const handler: Handlers = {
   async GET(req: Request) {
@@ -8,21 +8,7 @@ export const handler: Handlers = {
       const { searchParams } = new URL(req.url);
       const layer = searchParams.get('layer');
       const { path } = layers.find((dict) => dict.value == layer);
-      const layerInfo = JSON.parse(
-        (await execute_process(
-          'gdal',
-          ['raster', 'info', '-f', 'json', path],
-          undefined,
-          true
-        )) as string
-      );
-      const corner = layerInfo['cornerCoordinates'];
-      const bbox = [
-        corner['lowerLeft'][0],
-        corner['lowerLeft'][1],
-        corner['upperRight'][0],
-        corner['upperRight'][1],
-      ];
+      const bbox = (await (await fromUrl(path)).getImage()).getBoundingBox();
 
       // Filter layer basemap
       const style = {

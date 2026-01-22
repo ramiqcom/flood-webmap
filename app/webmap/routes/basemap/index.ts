@@ -1,5 +1,5 @@
 import { Handlers } from '$fresh/server.ts';
-import basemaps from '@/data/basemap.json' with { type: "json" };
+import basemaps from '@/data/basemap.json' with { type: 'json' };
 
 export const handler: Handlers = {
   async GET(req: Request) {
@@ -12,9 +12,7 @@ export const handler: Handlers = {
       const basemap = basemaps.filter((dict) => dict.value == type)[0];
       if (type != 'satellite') {
         style = await (
-          await fetch(
-            `${basemap['url']}?api_key=${Deno.env.get('STADIA_API_KEY')}`
-          )
+          await fetch(`${basemap['url']}?api_key=${Deno.env.get('STADIA_API_KEY')}`)
         ).json();
       } else {
         style = {
@@ -29,9 +27,15 @@ export const handler: Handlers = {
           attribution: '',
         };
       }
-      return new Response(JSON.stringify(style), { status: 200, headers: { "Content-type": "application/json" } });
+      return new Response(JSON.stringify(style), {
+        status: 200,
+        headers: { 'Content-type': 'application/json' },
+      });
     } catch (error) {
-      return new Response(error.message, { status: 404, headers: { "Content-type": "text/plain" } })
+      return new Response(error.message, {
+        status: 404,
+        headers: { 'Content-type': 'text/plain' },
+      });
     }
   },
 };

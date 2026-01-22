@@ -78,7 +78,7 @@ export default function MapCanvas({
           map.setLayoutProperty(
             layer_dict.id,
             'visibility',
-            layer_dict.id == layer.value ? 'visible' : 'none'
+            layer_dict.id == layer.value ? 'visible' : 'none',
           );
         }
       });

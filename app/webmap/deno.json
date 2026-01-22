@@ -22,6 +22,7 @@
     "color": "npm:color@^5.0.0",
     "eslint-config-prettier": "npm:eslint-config-prettier@^10.1.5",
     "flatgeobuf": "npm:flatgeobuf@^4.0.1",
+    "geotiff": "npm:geotiff@^2.1.4-beta.1",
     "maplibre-gl": "npm:maplibre-gl@^5.5.0",
     "pmtiles": "npm:pmtiles@^4.3.0",
     "preact": "https://esm.sh/preact@10.22.0",
